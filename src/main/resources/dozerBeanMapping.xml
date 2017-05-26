@@ -4,4 +4,5 @@
 		<stop-on-errors>true</stop-on-errors>
 		<wildcard>true</wildcard>
 	</configuration>
+	<!-- mapping标签可以不写，如果两个类的属性同名，不配置mapping也会自动转换 -->
 </mappings>
