@@ -5,4 +5,24 @@
 		<wildcard>true</wildcard>
 	</configuration>
 	<!-- mapping标签可以不写，如果两个类的属性同名，不配置mapping也会自动转换 -->
+	<mapping>
+		<class-a>com.xyz.gym_management_sys.po.Role</class-a>
+		<class-b>com.xyz.gym_management_sys.vo.RoleVo</class-b>
+	</mapping>
+	<mapping>
+		<class-a>com.xyz.gym_management_sys.po.Admin</class-a>
+		<class-b>com.xyz.gym_management_sys.vo.AdminVo</class-b>
+		<field>
+			<a>role.roleName</a>
+			<b>roleName</b>
+		</field>
+	</mapping>
+	<mapping>
+		<class-a>com.xyz.gym_management_sys.po.Admin</class-a>
+		<class-b>com.xyz.gym_management_sys.vo.LoginVo</class-b>
+		<field>
+			<a>adminName</a>
+			<b>userName</b>
+		</field>
+	</mapping>
 </mappings>

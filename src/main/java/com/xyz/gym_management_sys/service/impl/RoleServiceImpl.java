@@ -26,11 +26,11 @@ public class RoleServiceImpl implements RoleService {
 	
 	private Role role;
 	
+	@Transactional
 	public boolean updateRole(RoleVo roleVo) {
 		role = new Role();
 		
-		role.setRoleId(roleVo.getRoleId());
-		role.setRoleName(roleVo.getRoleName());
+		role = mapper.map(roleVo, Role.class);
 		
 		roleDao.updateRole(role);
 		return true;
@@ -51,7 +51,6 @@ public class RoleServiceImpl implements RoleService {
 		List<Role> roleList = roleDao.findRoleByNotNullProp(role);
 		List<RoleVo> roleVoList = new ArrayList();
 		
-		System.out.println(roleList.get(0).getRoleId()+"++++"+roleList.get(0).getRoleName());
 		
 		for(int i = 0;i<roleList.size();i++){
 			RoleVo tempVo = new RoleVo();
